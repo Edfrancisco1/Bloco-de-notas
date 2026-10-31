@@ -1,0 +1,32 @@
+# dependências
+/node_modules
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# testes
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# ambiente (nunca versionar segredos)
+.env
+.env.*
+!.env.example
+
+# sistema e editores
+.DS_Store
+Thumbs.db
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Supabase local (quando existir)
+/supabase/.temp/
+/supabase/.branches/

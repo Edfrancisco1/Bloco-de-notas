@@ -1,0 +1,10 @@
+.next
+node_modules
+package-lock.json
+coverage
+playwright-report
+test-results
+next-env.d.ts
+# documentos de referência do dono do produto: não reformatar
+PLANO_MVP.md
+CLAUDE.md

@@ -1,0 +1,197 @@
+@import 'tailwindcss';
+
+/*
+ * InvestNote — sistema visual "Editorial claro" (docs/adr/0004).
+ * Papel, tinta, marcador e linhas de livro-razão. Contrastes verificados (WCAG):
+ * texto ≥ 4,5:1 em papel; bordas de campos ≥ 3:1. Paleta dos tipos validada com o
+ * validador do skill dataviz (banda de luminosidade, croma, CVD, visão normal, contraste).
+ */
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+}
+
+@theme {
+  /* Superfícies */
+  --color-paper: #f6f3ec;
+  --color-paper-raised: #fbf9f4;
+  --color-paper-sunken: #efebe1;
+  --color-surface: #ffffff;
+
+  /* Tinta (texto) */
+  --color-ink: #1b1a17;
+  --color-ink-2: #4a4740;
+  --color-ink-3: #6b675d;
+
+  /* Linhas */
+  --color-rule: #e3ddd0;
+  --color-rule-strong: #cdc5b4;
+  --color-field: #8c8475;
+
+  /* Destaque azul-tinta */
+  --color-accent: #1f3b73;
+  --color-accent-hover: #172d59;
+  --color-accent-soft: #e4eaf4;
+
+  /* Marcador (só para chamar a atenção) */
+  --color-marker: #f3e3a3;
+  --color-marker-soft: #f8efcc;
+  --color-marker-strong: #d9b84a;
+  --color-marker-ink: #5c4300;
+
+  /* Ganho / perda — sempre acompanhados de sinal e seta */
+  --color-positive: #2c6a4e;
+  --color-positive-soft: #e3efe8;
+  --color-negative: #a3432b;
+  --color-negative-soft: #f6e5df;
+
+  /* Tipos de investimento (ordem fixa; validada em claro sobre #f6f3ec) */
+  --color-type-term-deposit: #3b68b0;
+  --color-type-bond: #b07a12;
+  --color-type-security: #0b8a78;
+  --color-type-crypto: #8a56b8;
+  --color-type-alternative: #668a1c;
+  --color-type-other: #c4527c;
+
+  /* Tons suaves dos tipos, para monogramas */
+  --color-type-term-deposit-soft: #e2e9f5;
+  --color-type-bond-soft: #f3e8d2;
+  --color-type-security-soft: #dcefeb;
+  --color-type-crypto-soft: #ece3f4;
+  --color-type-alternative-soft: #e8eed9;
+  --color-type-other-soft: #f5e1e9;
+
+  /* Escala tipográfica */
+  --text-hero: clamp(2.5rem, 1.9rem + 2.6vw, 4rem);
+  --text-hero--line-height: 1.02;
+  --text-display: clamp(1.875rem, 1.6rem + 1.2vw, 2.5rem);
+  --text-display--line-height: 1.1;
+  --text-title: 1.375rem;
+  --text-title--line-height: 1.25;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --shadow-overlay: 0 1px 2px rgb(27 26 23 / 0.06), 0 12px 32px -8px rgb(27 26 23 / 0.18);
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/*
+ * Tema escuro — PREPARADO, ainda não ativo (Marco 1 só tem tema claro).
+ * Tons dos tipos validados para a superfície #1b1a17:
+ *   #5f88cc #b9852a #21998a #9a74c7 #7a9932 #c96a8d
+ */
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-marker);
+    color: var(--color-ink);
+  }
+
+  /* Campos a 16px no mobile evitam o zoom automático do iOS. */
+  input,
+  select,
+  textarea {
+    font-size: max(16px, 1em);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Algarismos: proporcionais e lining em números de destaque; tabulares em colunas. */
+@utility figures-display {
+  font-family: var(--font-serif);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+@utility figures-table {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Rótulo editorial em versaletes discretos. */
+@utility eyebrow {
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+}
+
+/* Linha de livro-razão: régua fina por baixo. */
+@utility ledger-rule {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+/* Realce de marcador, como num caderno. */
+@utility marker-highlight {
+  background-image: linear-gradient(
+    transparent 58%,
+    var(--color-marker) 58%,
+    var(--color-marker) 92%,
+    transparent 92%
+  );
+}
+
+/* Entrada suave de diálogos e popovers (desativada por prefers-reduced-motion). */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+.dialog-overlay[data-state='open'] {
+  animation: fade-in 160ms var(--ease-out-soft);
+}
+
+.dialog-content[data-state='open'] {
+  animation: rise-in 220ms var(--ease-out-soft);
+}
+
+[data-radix-popper-content-wrapper] > [data-state='open'] {
+  animation: fade-in 120ms var(--ease-out-soft);
+}
