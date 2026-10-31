@@ -4,6 +4,8 @@ Registo privado de investimentos: depósitos a prazo, obrigações, ações e fu
 
 > Nome provisório. O produto está descrito em [`PLANO_MVP.md`](./PLANO_MVP.md) e as decisões em [`docs/adr`](./docs/adr).
 
+O processo de colaboração com Inteligência Artificial, incluindo os principais pedidos, decisões, tarefas executadas e verificações, está documentado em [`docs/registo-uso-ia.md`](./docs/registo-uso-ia.md).
+
 ## Estado atual
 
 **Marco 1 concluído** ([relatório](./docs/marcos/marco-01.md)). Todos os ecrãs do MVP funcionam em **modo demonstração**: os dados são fictícios e ficam só na memória do servidor. Pode também criar uma conta de teste. A ligação ao Supabase é o próximo passo ([guia](./docs/ligacao-supabase.md)).
