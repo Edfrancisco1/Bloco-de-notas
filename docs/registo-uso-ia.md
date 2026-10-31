@@ -2,27 +2,27 @@
 
 ## 1. Objetivo deste registo
 
-Este documento descreve como uma ferramenta de Inteligência Artificial (IA) generativa foi utilizada no desenvolvimento do **InvestNote**. O objetivo é tornar o processo transparente, identificando os pedidos feitos pelo aluno, as decisões tomadas durante o trabalho, as tarefas executadas pela IA e os mecanismos usados para verificar os resultados.
+Neste documento descrevo como utilizei uma ferramenta de Inteligência Artificial (IA) generativa no desenvolvimento do **InvestNote**. O meu objetivo é tornar o processo transparente, identificando os pedidos que fiz, as decisões que tomei durante o trabalho, as tarefas executadas pela IA e os mecanismos que usei para verificar os resultados.
 
-Os prompts abaixo são **resumos fiéis das interações**, e não transcrições integrais palavra por palavra. Não foram incluídas credenciais, dados pessoais sensíveis nem informação financeira real.
+Os prompts abaixo são **resumos fiéis das interações**, e não transcrições integrais palavra por palavra. Não incluí credenciais, dados pessoais sensíveis nem informação financeira real.
 
-## 2. Papel do aluno e papel da IA
+## 2. O meu papel e o papel da IA
 
-O aluno assumiu o papel de dono do produto: definiu o problema, escolheu o mercado inicial, aprovou a direção visual, decidiu a ordem de implementação e avaliou os resultados apresentados. A IA foi utilizada como assistente de planeamento, pesquisa, programação, documentação e testes.
+Assumi o papel de dono do produto: defini o problema, escolhi o mercado inicial, aprovei a direção visual, decidi a ordem de implementação e avaliei os resultados apresentados. Utilizei a IA como assistente de planeamento, pesquisa, programação, documentação e testes.
 
-A IA não trabalhou de forma totalmente autónoma. As principais decisões de produto foram apresentadas ao aluno e o desenvolvimento avançou depois das suas escolhas e aprovações. O código gerado também foi sujeito a verificações automáticas e revisão visual.
+A IA não trabalhou de forma totalmente autónoma. Analisei as principais decisões de produto e o desenvolvimento avançou depois das minhas escolhas e aprovações. Também sujeitei o código gerado a verificações automáticas e revisão visual.
 
 ## 3. Registo dos principais prompts e resultados
 
-| Etapa | Pedido do aluno (resumo do prompt) | Ação realizada pela IA | Decisão ou validação do aluno |
+| Etapa | O meu pedido (resumo do prompt) | Ação realizada pela IA | A minha decisão ou validação |
 | --- | --- | --- | --- |
-| Início | Iniciar a execução do MVP descrito em `PLANO_MVP.md`. | Leu o plano, inspecionou o projeto, verificou as versões das tecnologias e propôs um plano para o primeiro marco. | Aprovou o arranque do Marco 1. |
-| Mercado | Usar o **kwanza (Kz)** como moeda inicial. | Adaptou o produto ao contexto angolano, à moeda AOA e à formatação `pt-AO`, incluindo valores como `1 234 567,89 Kz`. | Confirmou o kwanza como moeda inicial. |
-| Direção visual | Criar um design limpo, intuitivo e sem aparência de template comum, inspirado em bons produtos do mercado. | Analisou referências de trackers de investimento e apresentou alternativas de direção visual. | Escolheu a direção **Editorial claro**. |
-| Estratégia técnica | Decidir entre ligar imediatamente o Supabase ou desenvolver primeiro a experiência visual. | Expôs as implicações das duas opções e propôs uma camada de dados substituível. | Escolheu desenvolver primeiro a interface com dados fictícios e deixar o Supabase para uma fase posterior. |
-| Implementação | Construir o primeiro marco do InvestNote de acordo com o plano aprovado. | Criou a fundação técnica, o sistema visual, os cálculos financeiros, a camada de dados em memória e os ecrãs do MVP. | Acompanhou o resultado apresentado. |
-| Continuação | Depois de observar o painel: **“Adorei o design, continue com o plano.”** | Prosseguiu com os restantes fluxos, ecrãs de investimentos, gestão, testes e documentação do marco. | Aprovou a direção visual e autorizou a continuação. |
-| Publicação | Preparar e publicar o projeto no repositório GitHub do aluno. | Configurou a identidade Git correta, corrigiu a autenticação que estava associada a outra conta e publicou a branch `main`. | Indicou a conta GitHub correta: `Edfrancisco1`. |
+| Início | Iniciar a execução do MVP descrito em `PLANO_MVP.md`. | Leu o plano, inspecionou o projeto, verificou as versões das tecnologias e propôs um plano para o primeiro marco. | Aprovei o arranque do Marco 1. |
+| Mercado | Usar o **kwanza (Kz)** como moeda inicial. | Adaptou o produto ao contexto angolano, à moeda AOA e à formatação `pt-AO`, incluindo valores como `1 234 567,89 Kz`. | Confirmei o kwanza como moeda inicial. |
+| Direção visual | Criar um design limpo, intuitivo e sem aparência de template comum, inspirado em bons produtos do mercado. | Analisou referências de trackers de investimento e apresentou alternativas de direção visual. | Escolhi a direção **Editorial claro**. |
+| Estratégia técnica | Decidir entre ligar imediatamente o Supabase ou desenvolver primeiro a experiência visual. | Expôs as implicações das duas opções e propôs uma camada de dados substituível. | Escolhi desenvolver primeiro a interface com dados fictícios e deixar o Supabase para uma fase posterior. |
+| Implementação | Construir o primeiro marco do InvestNote de acordo com o plano aprovado. | Criou a fundação técnica, o sistema visual, os cálculos financeiros, a camada de dados em memória e os ecrãs do MVP. | Acompanhei o resultado apresentado. |
+| Continuação | Depois de observar o painel, escrevi: **“Adorei o design, continue com o plano.”** | Prosseguiu com os restantes fluxos, ecrãs de investimentos, gestão, testes e documentação do marco. | Aprovei a direção visual e autorizei a continuação. |
+| Publicação | Preparar e publicar o projeto no meu repositório GitHub. | Configurou a identidade Git correta, corrigiu a autenticação que estava associada a outra conta e publicou a branch `main`. | Indiquei a minha conta GitHub correta: `Edfrancisco1`. |
 
 ## 4. Trabalho realizado com apoio da IA
 
@@ -30,23 +30,23 @@ A IA não trabalhou de forma totalmente autónoma. As principais decisões de pr
 
 A IA analisou o `PLANO_MVP.md`, verificou a compatibilidade das versões dos pacotes e estudou padrões usados por produtos de acompanhamento de investimentos, incluindo Kubera, Finary, Parqet e Copilot. Também consultou documentação técnica relevante para preparar a futura integração com o Supabase.
 
-O trabalho foi dividido em marcos. As decisões que alteraram o plano original foram registadas em documentos ADR (*Architecture Decision Records*), para que as razões técnicas e de produto não ficassem apenas na conversa com a IA.
+Dividi o trabalho em marcos com o apoio da IA. Registei as decisões que alteraram o plano original em documentos ADR (*Architecture Decision Records*), para que as razões técnicas e de produto não ficassem apenas na conversa com a IA.
 
 ### 4.2 Fundação técnica
 
-Com apoio da IA foi preparado um projeto Next.js com TypeScript, Tailwind CSS, testes automatizados e integração contínua. Foram ainda registados desvios de versões motivados por compatibilidade, nomeadamente TypeScript 6 e ESLint 9.
+Com o apoio da IA, preparei um projeto Next.js com TypeScript, Tailwind CSS, testes automatizados e integração contínua. Registei também os desvios de versões motivados por compatibilidade, nomeadamente TypeScript 6 e ESLint 9.
 
-Foram escritos cinco ADRs, incluindo decisões sobre o contexto de Angola e do kwanza e sobre a estratégia de desenvolver primeiro a experiência visual com dados fictícios.
+Com o apoio da IA, escrevi cinco ADRs, incluindo decisões sobre o contexto de Angola e do kwanza e sobre a estratégia de desenvolver primeiro a experiência visual com dados fictícios.
 
 ### 4.3 Design e experiência de utilização
 
-A IA implementou a direção **Editorial claro**, aprovada pelo aluno. O sistema visual utiliza tons de papel e tinta, uma cor de destaque azul, números em tipografia serifada e linhas finas inspiradas num livro-razão. Procurou-se evitar o uso excessivo de cartões genéricos e o aspeto de um template pronto.
+A IA implementou a direção **Editorial claro**, que eu aprovei. O sistema visual utiliza tons de papel e tinta, uma cor de destaque azul, números em tipografia serifada e linhas finas inspiradas num livro-razão. Pedi que fosse evitado o uso excessivo de cartões genéricos e o aspeto de um template pronto.
 
-As cores associadas aos tipos de investimento foram verificadas para não dependerem apenas da distinção entre vermelho e verde e para serem mais seguras para pessoas com daltonismo.
+Pedi à IA que verificasse as cores associadas aos tipos de investimento, para que não dependessem apenas da distinção entre vermelho e verde e fossem mais seguras para pessoas com daltonismo.
 
 ### 4.4 Regras e cálculos
 
-Foram implementadas funções para calcular capital investido, resultado, custo médio e estimativas de depósitos a prazo. Os valores monetários utilizam aritmética decimal, evitando que números de ponto flutuante sejam a fonte de verdade dos cálculos financeiros.
+Com o apoio da IA, implementei funções para calcular capital investido, resultado, custo médio e estimativas de depósitos a prazo. Decidi utilizar aritmética decimal nos valores monetários, evitando que números de ponto flutuante fossem a fonte de verdade dos cálculos financeiros.
 
 A IA também criou uma interface `UserRepository` e uma implementação em memória com dados fictícios. Esta separação permite substituir a camada atual por uma implementação Supabase sem refazer os ecrãs e as regras financeiras.
 
@@ -67,7 +67,7 @@ O Marco 1 inclui:
 
 ### 4.6 Testes e correções
 
-O trabalho da IA não foi aceite apenas por produzir código ou uma interface visual. Foram executadas verificações automáticas para detetar erros e confirmar os fluxos principais.
+Não aceitei o trabalho da IA apenas por produzir código ou uma interface visual. Pedi a execução de verificações automáticas para detetar erros e confirmar os fluxos principais.
 
 No final do marco:
 
@@ -76,18 +76,18 @@ No final do marco:
 - 20 páginas eram verificadas automaticamente sem problemas graves ou críticos de acessibilidade;
 - 18 páginas eram verificadas sem deslocamento horizontal a 360 px;
 - o fluxo principal podia ser realizado apenas com teclado;
-- foram produzidas 36 capturas para revisão visual.
+- produzi, com o apoio da IA, 36 capturas para revisão visual.
 
-Os testes encontraram problemas que foram corrigidos durante o desenvolvimento:
+Os testes encontraram problemas que corrigi com o apoio da IA durante o desenvolvimento:
 
 1. o botão “Continuar” guardava o investimento antes da confirmação final;
 2. a pesquisa exigia uma frase exata em vez de aceitar termos parciais;
 3. o onboarding saltava um passo em determinadas condições;
 4. a landing page ultrapassava a largura do ecrã no telemóvel.
 
-## 5. Decisões que permaneceram sob responsabilidade do aluno
+## 5. Decisões que permaneceram sob a minha responsabilidade
 
-Embora a IA tenha apresentado opções e recomendações, as seguintes decisões foram tomadas ou aprovadas pelo aluno:
+Embora a IA me tenha apresentado opções e recomendações, tomei ou aprovei as seguintes decisões:
 
 - escolha do InvestNote como projeto a desenvolver;
 - utilização inicial do kwanza e foco no contexto angolano;
@@ -96,11 +96,11 @@ Embora a IA tenha apresentado opções e recomendações, as seguintes decisões
 - aprovação do painel e continuação do plano;
 - identificação da conta GitHub em que o projeto seria publicado.
 
-O aluno continua responsável por compreender o funcionamento do projeto, rever o resultado, apresentar o trabalho e decidir quais alterações serão integradas.
+Continuo responsável por compreender o funcionamento do projeto, rever o resultado, apresentar o trabalho e decidir quais alterações serão integradas.
 
 ## 6. Limitações e trabalho ainda não concluído
 
-O projeto publicado corresponde a um marco visual e funcional, não a uma versão pronta para guardar dados financeiros reais. Permanecem pendentes:
+O projeto que publiquei corresponde a um marco visual e funcional, não a uma versão pronta para guardar dados financeiros reais. Ainda tenho pendentes as seguintes tarefas:
 
 - autenticação real, migrations, base de dados e políticas RLS no Supabase;
 - testes de isolamento entre utilizadores na base de dados real;
@@ -112,7 +112,7 @@ Os dados atuais são fictícios e mantidos em memória. Podem desaparecer quando
 
 ## 7. Evidências disponíveis no repositório
 
-O trabalho descrito pode ser consultado nos seguintes ficheiros e diretórios:
+Disponibilizei as evidências do trabalho descrito nos seguintes ficheiros e diretórios:
 
 - [`PLANO_MVP.md`](../PLANO_MVP.md) — definição do produto, arquitetura e critérios de aceitação;
 - [`docs/marcos/marco-01.md`](./marcos/marco-01.md) — relatório do primeiro marco;
@@ -125,6 +125,6 @@ O trabalho descrito pode ser consultado nos seguintes ficheiros e diretórios:
 
 ## 8. Declaração de transparência
 
-A IA foi uma ferramenta relevante na produção do projeto: ajudou a pesquisar, planear, escrever código, criar testes, identificar erros e produzir documentação. O seu uso não é apresentado como trabalho exclusivamente manual do aluno. Ao mesmo tempo, as decisões de produto, a aprovação da direção seguida e a responsabilidade pela entrega pertencem ao aluno.
+A IA foi uma ferramenta relevante na produção do projeto: ajudou-me a pesquisar, planear, escrever código, criar testes, identificar erros e produzir documentação. Não apresento este projeto como trabalho exclusivamente manual. Ao mesmo tempo, tomei as decisões de produto, aprovei a direção seguida e assumi a responsabilidade pela entrega.
 
-Este registo procura permitir que o professor avalie tanto o resultado técnico como o processo de colaboração entre o aluno e a IA.
+Com este registo, procuro permitir que o professor avalie tanto o resultado técnico como o meu processo de colaboração com a IA.
